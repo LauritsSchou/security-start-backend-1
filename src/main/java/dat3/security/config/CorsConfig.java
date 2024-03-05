@@ -13,7 +13,7 @@ public class CorsConfig {
     //When you know the domain name for your client, add it below before deployment
     private static final String[] ALLOWED_ORIGINS = new String[] {
 
-            //add deployed domain name here: "https://example.com/",
+           "https://icy-ocean-0747fb603.4.azurestaticapps.net/",
             "http://localhost:5173/",
             "http://localhost:5174/",
             "http://localhost:5175/"
