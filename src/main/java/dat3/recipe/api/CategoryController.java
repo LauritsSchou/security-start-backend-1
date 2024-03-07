@@ -28,8 +28,8 @@ public class CategoryController {
                 .cacheControl(cacheControl)
                 .body(categories);
     }
-    //@PostMapping
-    //public RecipeDto addCategory(@RequestBody RecipeDto request) {
-      //  return categoryService.addCategory(request);
-    //}
+    @PostMapping("/{category}")
+    public List<String> addCategory(@PathVariable String category){
+        return categoryService.addCategory(category);
+    }
 }

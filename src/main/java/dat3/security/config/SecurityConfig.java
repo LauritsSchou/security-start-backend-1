@@ -68,7 +68,7 @@ public class SecurityConfig {
             .requestMatchers(mvcMatcherBuilder.pattern(HttpMethod.POST, "/recipes")).hasAnyAuthority("USER", "ADMIN")
             .requestMatchers(mvcMatcherBuilder.pattern(HttpMethod.PUT, "/recipes/*")).hasAnyAuthority("USER", "ADMIN")
             .requestMatchers(mvcMatcherBuilder.pattern(HttpMethod.DELETE, "/recipes/*")).hasAnyAuthority("USER", "ADMIN")
-            .requestMatchers(mvcMatcherBuilder.pattern(HttpMethod.POST, "/categories")).hasAnyAuthority("USER", "ADMIN")
+            .requestMatchers(mvcMatcherBuilder.pattern(HttpMethod.POST, "/categories/*")).hasAnyAuthority("ADMIN")
 
 
 

@@ -23,9 +23,10 @@ public class CategoryService {
         //Convert from list of Categories to DTO-type, list of Strings
         return categories.stream().map((c)->new String(c.getName())).toList();
     }
-    //public dat3.recipe.entity.RecipeDto addCategory(RecipeDto request) {
-       // RecipeDto newCategory = new RecipeDto();
-
-        //categoryRepository.save(newCategory);
+    public List <String> addCategory(String category){
+        Category cat = new Category(category);
+        categoryRepository.save(cat);
+        return getAllCategories();
+    }
 }
 
