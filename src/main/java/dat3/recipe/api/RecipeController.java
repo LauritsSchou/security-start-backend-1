@@ -39,6 +39,4 @@ public class RecipeController {
     public ResponseEntity deleteRecipe(@PathVariable int id) {
         return recipeService.deleteRecipe(id);
     }
-
-
 }
