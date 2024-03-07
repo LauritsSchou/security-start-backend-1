@@ -39,6 +39,7 @@ public class Recipe {
 
     @ManyToOne
     private Category category;
+    private String owner;
     public void addCategory(Category category) {
         category.addRecipe(this);
     }

@@ -5,6 +5,7 @@ import dat3.recipe.service.RecipeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -19,7 +20,7 @@ public class RecipeController {
     @GetMapping
     public List<RecipeDto> getAllRecipes(@RequestParam(required = false) String category) {
         if(category != null) {
-            System.out.println("Category: " + category);
+            System.out.println("RecipeDto: " + category);
         }
         return recipeService.getAllRecipes(category);
     }
@@ -28,11 +29,12 @@ public class RecipeController {
         return recipeService.getRecipeById(id);
     }
     @PostMapping
-    public RecipeDto addRecipe(@RequestBody RecipeDto request) {
-        return recipeService.addRecipe(request);
+    public RecipeDto addRecipe(@RequestBody RecipeDto request, Principal p) {
+        String userName = p.getName();
+        return recipeService.addRecipe(request, userName);
     }
     @PutMapping(path = "/{id}")
-    public RecipeDto addRecipe(@RequestBody RecipeDto request,@PathVariable int id) {
+    public RecipeDto addRecipe(@RequestBody RecipeDto request, @PathVariable int id) {
         return recipeService.editRecipe(request,id);
     }
     @DeleteMapping(path = "/{id}")
